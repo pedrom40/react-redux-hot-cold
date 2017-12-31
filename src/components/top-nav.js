@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {restartGame} from '../actions';
+import {getAuralUpdate, restartGame} from '../actions';
 
 import './top-nav.css';
 
@@ -26,12 +26,8 @@ export function TopNav(props) {
           </a>
         </li>
         <li>
-          <a
-            href="#get-status"
-            /* the `visuallyhidden` class hides an element
-            while leaving it available to screen reader users  */
-            className="visuallyhidden focusable status-link"
-            onClick={() => props.onGenerateAuralUpdate()}
+          <a href="#get-status" className="visuallyhidden focusable status-link"
+            onClick={() => props.dispatch(getAuralUpdate())}
           >
             Hear state of game
           </a>
